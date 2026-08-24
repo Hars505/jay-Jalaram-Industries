@@ -1,4 +1,11 @@
 {
-  "framework": null,
-  "buildCommand": "NITRO_PRESET=vercel vite build"
+  "buildCommand": "npm run build",
+  "outputDirectory": ".output/public",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
