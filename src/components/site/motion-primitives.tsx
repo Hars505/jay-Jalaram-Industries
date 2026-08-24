@@ -61,37 +61,40 @@ export function SectionReveal({
 
 export function CountUp({
   to,
+  from,
   suffix = "",
   duration = 1400,
   className,
 }: {
   to: number;
+  from?: number;
   suffix?: string;
   duration?: number;
   className?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const inView = useInView(ref, { once: true, margin: "0px" });
   const reduce = useReducedMotion();
-  const [value, setValue] = useState(0);
+  const startVal = from ?? (to > 1000 ? to : 0);
+  const [value, setValue] = useState(startVal);
 
   useEffect(() => {
-    if (!inView) return;
     if (reduce) {
       setValue(to);
       return;
     }
+    if (!inView) return;
     let frame = 0;
     const start = performance.now();
     const tick = (now: number) => {
       const p = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - p, 3);
-      setValue(Math.round(to * eased));
+      setValue(Math.round(startVal + (to - startVal) * eased));
       if (p < 1) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [inView, to, duration, reduce]);
+  }, [inView, to, startVal, duration, reduce]);
 
   return (
     <span ref={ref} className={className}>

@@ -176,65 +176,51 @@ function ContactPage() {
           </div>
         </Reveal>
 
-        {/* Map + address */}
+        {/* Workshop address */}
         <Reveal delay={0.18} className="md:col-span-2 lg:col-span-3">
-          <div className="panel-tile overflow-hidden rounded-lg border border-border bg-card">
-            <div className="grid gap-0 lg:grid-cols-5">
-              <div className="p-6 lg:col-span-2">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted text-amber">
-                    <MapPin className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-lg font-semibold">Workshop address</h3>
-                    <a
-                      href={company.maps.placeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-1 block text-muted-foreground transition-colors hover:text-amber"
-                    >
-                      <address className="not-italic">
-                        <p>{company.address.line1}</p>
-                        <p>{company.address.line2}</p>
-                        <p>
-                          {company.address.city}, {company.address.state}
-                        </p>
-                      </address>
-                    </a>
-                    <p className="mt-3 text-sm text-muted-foreground">Mon – Sat · 9:00 – 19:00 IST</p>
-
-                    <div className="mt-5 flex flex-wrap gap-3">
-                      <a
-                        href={company.maps.directionsUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-md bg-amber px-4 py-2.5 text-sm font-semibold text-amber-foreground transition-colors hover:bg-amber/90"
-                      >
-                        <Navigation className="h-4 w-4" /> Get directions
-                      </a>
-                      <button
-                        type="button"
-                        onClick={copyAddress}
-                        className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-                      >
-                        {copied ? <Check className="h-4 w-4 text-emerald-600" /> : <Copy className="h-4 w-4" />}
-                        {copied ? "Copied" : "Copy address"}
-                      </button>
-                    </div>
-                  </div>
+          <div className="panel-tile overflow-hidden rounded-lg border border-border bg-card p-6">
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
+              <div className="flex items-start gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted text-amber">
+                  <MapPin className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-semibold">Workshop address</h3>
+                  <a
+                    href={company.maps.placeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block text-muted-foreground transition-colors hover:text-amber"
+                  >
+                    <address className="not-italic">
+                      <p>{company.address.line1}</p>
+                      <p>{company.address.line2}</p>
+                      <p>
+                        {company.address.city}, {company.address.state}
+                      </p>
+                    </address>
+                  </a>
+                  <p className="mt-3 text-sm text-muted-foreground">Mon – Sat · 9:00 – 19:00 IST</p>
                 </div>
               </div>
 
-              <div className="relative min-h-[320px] border-t border-border lg:col-span-3 lg:border-l lg:border-t-0">
-                <iframe
-                  title={`Map to ${company.name}`}
-                  src={company.maps.embedUrl}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0 h-full w-full"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                />
+              <div className="flex flex-wrap gap-3 sm:self-center">
+                <a
+                  href={company.maps.directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md bg-amber px-4 py-2.5 text-sm font-semibold text-amber-foreground transition-colors hover:bg-amber/90"
+                >
+                  <Navigation className="h-4 w-4" /> Get directions
+                </a>
+                <button
+                  type="button"
+                  onClick={copyAddress}
+                  className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                >
+                  {copied ? <Check className="h-4 w-4 text-emerald-600" /> : <Copy className="h-4 w-4" />}
+                  {copied ? "Copied" : "Copy address"}
+                </button>
               </div>
             </div>
           </div>
