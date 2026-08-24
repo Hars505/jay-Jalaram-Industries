@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Premium Golden Gradients -->
+    <linearGradient id="goldHex" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="30%" stop-color="#F59E0B"/>
+      <stop offset="70%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+    
+    <linearGradient id="goldLetterLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="25%" stop-color="#FDE047"/>
+      <stop offset="60%" stop-color="#F59E0B"/>
+      <stop offset="90%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+
+    <linearGradient id="goldLetterRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="30%" stop-color="#F59E0B"/>
+      <stop offset="75%" stop-color="#C2410C"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+
+    <radialGradient id="darkBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#27272A"/>
+      <stop offset="70%" stop-color="#141417"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </radialGradient>
+
+    <!-- 3D Shadow for depth and optical isolation -->
+    <filter id="glowShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.85"/>
+      <feDropShadow dx="-1" dy="-1" stdDeviation="2" flood-color="#FDE047" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Dark Hexagon Canvas Background -->
+  <polygon points="256,18 456,134 456,366 256,482 56,366 56,134" fill="url(#darkBg)"/>
+
+  <!-- Outer Hexagon Golden Bevel Frame -->
+  <polygon points="256,18 456,134 456,366 256,482 56,366 56,134" 
+           fill="none" 
+           stroke="url(#goldHex)" 
+           stroke-width="28" 
+           stroke-linejoin="round"/>
+
+  <!-- Inner Gold Accent Hexagon Rim -->
+  <polygon points="256,44 432,146 432,354 256,456 80,354 80,146" 
+           fill="none" 
+           stroke="url(#goldHex)" 
+           stroke-width="5" 
+           stroke-opacity="0.45" 
+           stroke-linejoin="round"/>
+
+  <!-- Combined Monogram Group - Left J Shifted Closer to Right J -->
+  <g filter="url(#glowShadow)">
+    
+    <!-- LEFT 'J' (Slightly Upper-Left, Shifted Closer Right) -->
+    <path d="M 153,118 
+             L 248,118 
+             L 248,156 
+             L 214,156 
+             L 214,298 
+             C 214,334 190,354 156,354 
+             C 126,354 106,334 106,308 
+             L 142,308 
+             C 142,319 147,324 156,324 
+             C 170,324 177,313 177,293 
+             L 177,156 
+             L 153,156 
+             Z" 
+          fill="url(#goldLetterLeft)" 
+          stroke="#451A03" 
+          stroke-width="3"
+          stroke-linejoin="round"/>
+
+    <!-- RIGHT 'J' (Slightly Lower-Right) -->
+    <path d="M 282,168 
+             L 377,168 
+             L 377,206 
+             L 343,206 
+             L 343,348 
+             C 343,384 319,404 285,404 
+             C 255,404 235,384 235,358 
+             L 271,358 
+             C 271,369 276,374 285,374 
+             C 299,374 306,363 306,343 
+             L 306,206 
+             L 282,206 
+             Z" 
+          fill="url(#goldLetterRight)" 
+          stroke="#451A03" 
+          stroke-width="3"
+          stroke-linejoin="round"/>
+
+  </g>
+</svg>
