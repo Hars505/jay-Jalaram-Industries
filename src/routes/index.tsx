@@ -250,7 +250,12 @@ function Home() {
               <p className="font-display text-4xl font-semibold text-amber sm:text-5xl">
                 <CountUp to={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
+              <p className="mt-2 text-sm leading-tight text-muted-foreground">
+                {stat.label}
+                {"highlight" in stat && stat.highlight ? (
+                  <span className="block text-foreground/90">{stat.highlight}</span>
+                ) : null}
+              </p>
             </Reveal>
           ))}
         </div>

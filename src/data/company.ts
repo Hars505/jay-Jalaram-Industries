@@ -88,7 +88,7 @@ export const capabilities = [
 ] as const;
 
 export const stats = [
-  { value: 1983, label: "Established in Ahmedabad", suffix: "" },
+  { value: 1983, label: "Established in", highlight: "Ahmedabad", suffix: "" },
   { value: 2011, label: "Incorporated", suffix: "" },
   { value: 20, label: "Machines on the floor", suffix: "+" },
   { value: 10, label: "Skilled team members", suffix: "" },
