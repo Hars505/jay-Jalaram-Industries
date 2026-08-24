@@ -1,3 +1,4 @@
 {
+  "framework": null,
   "buildCommand": "NITRO_PRESET=vercel vite build"
 }
